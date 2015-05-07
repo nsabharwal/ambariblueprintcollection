@@ -1,0 +1,76 @@
+{
+  "configurations": [
+    {
+      "core-site": {
+        "fs.gs.impl": "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem",
+        "fs.AbstractFileSystem.gs.impl": "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS",
+        "fs.gs.project.id": "siq-haas",
+        "google.cloud.auth.service.account.enable": true,
+        "google.cloud.auth.service.account.email": "YOUR_ACCOUNT_ID@developer.gserviceaccount.com",
+        "google.cloud.auth.service.account.keyfile": "/mnt/fs1/<PRIVATE_KEY_FILE>.p12"
+      }
+    },
+    {
+      "tez-site": {
+        "tez.aux.uris" : "/apps/tez/aux-jars/"
+      }
+    }
+  ]
+}
+  ],
+  "host_groups": [
+    {
+      "name": "master",
+      "components": [
+        {
+          "name": "NAMENODE"
+        },
+        {
+          "name": "SECONDARY_NAMENODE"
+        },
+        {
+          "name": "RESOURCEMANAGER"
+        },
+        {
+          "name": "APP_TIMELINE_SERVER"
+        },
+        {
+          "name": "HISTORYSERVER"
+        },
+        {
+          "name": "ZOOKEEPER_SERVER"
+        }
+      ],
+      "cardinality": "1"
+    },
+    {
+      "name": "slave_1",
+      "components": [
+        {
+          "name": "DATANODE"
+        },
+        {
+          "name": "HDFS_CLIENT"
+        },
+        {
+          "name": "NODEMANAGER"
+        },
+        {
+          "name": "YARN_CLIENT"
+        },
+        {
+          "name": "MAPREDUCE2_CLIENT"
+        },
+        {
+          "name": "ZOOKEEPER_CLIENT"
+        }
+      ],
+      "cardinality": "2"
+    }
+  ],
+  "Blueprints": {
+    "blueprint_name": "multi-node-hdfs-yarn",
+    "stack_name": "HDP",
+    "stack_version": "2.2"
+  }
+}

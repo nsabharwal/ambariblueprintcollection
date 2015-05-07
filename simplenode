@@ -1,0 +1,115 @@
+{
+  "configurations": [
+    {
+      "hive-site": {
+        "javax.jdo.option.ConnectionUserName": "hive",
+        "javax.jdo.option.ConnectionPassword": "hive"
+      }
+    },
+    {
+      "hdfs-site": {
+        "dfs.datanode.data.dir": "/hadoop"
+      }
+    }
+  ],
+  "host_groups": [
+    {
+      "name": "master_1",
+      "components": [
+        {
+          "name": "NAMENODE"
+        },
+        {
+          "name": "ZOOKEEPER_SERVER"
+        },
+        {
+          "name": "HDFS_CLIENT"
+        },
+        {
+          "name": "YARN_CLIENT"
+        },
+        {
+          "name": "HCAT"
+        },
+        {
+          "name": "HISTORYSERVER"
+        },
+        {
+          "name": "SECONDARY_NAMENODE"
+        },
+        {
+          "name": "HIVE_METASTORE"
+        },
+        {
+          "name": "HDFS_CLIENT"
+        },
+        {
+          "name": "HIVE_CLIENT"
+        },
+        {
+          "name": "YARN_CLIENT"
+        },
+        {
+          "name": "MYSQL_SERVER"
+        },
+        {
+          "name": "WEBHCAT_SERVER"
+        },
+        {
+          "name": "RESOURCEMANAGER"
+        },
+        {
+          "name": "HDFS_CLIENT"
+        },
+        {
+          "name": "APP_TIMELINE_SERVER"
+        },
+        {
+          "name": "AMBARI_SERVER"
+        },
+        {
+          "name": "ZOOKEEPER_CLIENT"
+        },
+        {
+          "name": "PIG"
+        },
+        {
+          "name": "OOZIE_CLIENT"
+        },
+        {
+          "name": "MAPREDUCE2_CLIENT"
+        },
+        {
+          "name": "HIVE_SERVER"
+        },
+        {
+          "name": "METRICS_COLLECTOR"
+        },
+        {
+          "name": "METRICS_MONITOR"
+        }
+      ],
+      "cardinality": "1"
+    },
+    {
+      "name": "slave_1",
+      "components": [
+        {
+          "name": "NODEMANAGER"
+        },
+        {
+          "name": "DATANODE"
+        },
+        {
+          "name": "METRICS_MONITOR"
+        }
+      ],
+      "cardinality": "1"
+    }
+  ],
+  "Blueprints": {
+    "blueprint_name": "hdp-micro-cluster",
+    "stack_name": "HDP",
+    "stack_version": "2.2"
+  }
+}
