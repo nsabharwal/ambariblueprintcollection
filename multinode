@@ -21,9 +21,6 @@
           "name": "HBASE_MASTER"
         },
         {
-          "name": "GANGLIA_SERVER"
-        },
-        {
           "name": "HDFS_CLIENT"
         },
         {
@@ -31,9 +28,6 @@
         },
         {
           "name": "HCAT"
-        },
-        {
-          "name": "GANGLIA_MONITOR"
         },
         {
           "name": "FALCON_SERVER"
@@ -78,9 +72,6 @@
           "name": "MYSQL_SERVER"
         },
         {
-          "name": "GANGLIA_MONITOR"
-        },
-        {
           "name": "WEBHCAT_SERVER"
         }
       ],
@@ -100,9 +91,6 @@
         },
         {
           "name": "ZOOKEEPER_SERVER"
-        },
-        {
-          "name": "GANGLIA_MONITOR"
         }
       ],
       "cardinality": "1"
@@ -116,10 +104,7 @@
         {
           "name": "ZOOKEEPER_SERVER"
         },
-        {
-          "name": "GANGLIA_MONITOR"
-        }
-      ],
+      ]
       "cardinality": "1"
     },
     {
@@ -133,9 +118,6 @@
         },
         {
           "name": "DATANODE"
-        },
-        {
-          "name": "GANGLIA_MONITOR"
         },
         {
           "name": "FALCON_CLIENT"
@@ -181,9 +163,6 @@
         },
         {
           "name": "MAPREDUCE2_CLIENT"
-        },
-        {
-          "name": "GANGLIA_MONITOR"
         },
         {
           "name": "KNOX_GATEWAY"

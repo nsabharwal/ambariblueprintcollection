@@ -1,11 +1,6 @@
 {
   "configurations": [
     {
-      "nagios-env": {
-        "nagios_contact": "admin@localhost"
-      }
-    },
-    {
       "hive-site": {
         "javax.jdo.option.ConnectionUserName": "hive",
         "javax.jdo.option.ConnectionPassword": "hive"
@@ -26,9 +21,6 @@
           "name": "HBASE_MASTER"
         },
         {
-          "name": "GANGLIA_SERVER"
-        },
-        {
           "name": "HDFS_CLIENT"
         },
         {
@@ -36,9 +28,6 @@
         },
         {
           "name": "HCAT"
-        },
-        {
-          "name": "GANGLIA_MONITOR"
         },
         {
           "name": "FALCON_SERVER"
@@ -77,9 +66,6 @@
           "name": "MYSQL_SERVER"
         },
         {
-          "name": "GANGLIA_MONITOR"
-        },
-        {
           "name": "WEBHCAT_SERVER"
         },
         {
@@ -95,16 +81,10 @@
           "name": "ZOOKEEPER_SERVER"
         },
         {
-          "name": "GANGLIA_MONITOR"
-        },
-        {
           "name": "OOZIE_SERVER"
         },
         {
           "name": "ZOOKEEPER_SERVER"
-        },
-        {
-          "name": "GANGLIA_MONITOR"
         }
       ],
       "cardinality": "1"
@@ -122,9 +102,6 @@
           "name": "DATANODE"
         },
         {
-          "name": "GANGLIA_MONITOR"
-        },
-        {
           "name": "FALCON_CLIENT"
         },
         {
@@ -138,9 +115,6 @@
       "components": [
         {
           "name": "AMBARI_SERVER"
-        },
-        {
-          "name": "NAGIOS_SERVER"
         },
         {
           "name": "ZOOKEEPER_CLIENT"
@@ -171,9 +145,6 @@
         },
         {
           "name": "MAPREDUCE2_CLIENT"
-        },
-        {
-          "name": "GANGLIA_MONITOR"
         },
         {
           "name": "KNOX_GATEWAY"
