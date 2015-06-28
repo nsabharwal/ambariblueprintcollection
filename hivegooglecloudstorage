@@ -1,94 +1,97 @@
 {
-    "configurations": [
-        {
-            "core-site": {
-                "fs.gs.impl": "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem",
-                "fs.AbstractFileSystem.gs.impl": "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS",
-                "fs.gs.project.id": "hadoop-install",
-                "google.cloud.auth.service.account.enable": true,
-                "google.cloud.auth.service.account.email": "262136906998-pbc7rofkk3dm487p4442emf1kbbk1uuu@developer.gserviceaccount.com",
-                "google.cloud.auth.service.account.keyfile": "/mnt/fs1/hadoop.p12"
-            }
-        },
-        {
-            "hive-site": {
-                "javax.jdo.option.ConnectionUserName": "hive",
-                "javax.jdo.option.ConnectionPassword": "hive"
-            }
-        },
-        {
-            "hdfs-site": {
-                "dfs.datanode.data.dir": "/hadoop"
-            }
-        },
-        {
-            "tez-site": {
-                "tez.aux.uris": "/apps/tez/aux-jars/"
-            }
-        }
-    ],
-    "host_groups": [
-        {
-            "name": "master",
-            "components": [
-                {
-                    "name": "NAMENODE"
-                },
-                {
-                    "name": "SECONDARY_NAMENODE"
-                },
-                {
-                    "name": "RESOURCEMANAGER"
-                },
-                {
-                    "name": "APP_TIMELINE_SERVER"
-                },
-                {
-                    "name": "HISTORYSERVER"
-                },
-                {
-                    "name": "HCAT"
-                },
-                {
-                    "name": "ZOOKEEPER_SERVER"
-                }
-            ],
-            "cardinality": "1"
-        },
-        {
-            "name": "slave_1",
-            "components": [
-                {
-                    "name": "DATANODE"
-                },
-                {
-                    "name": "HDFS_CLIENT"
-                },
-                {
-                    "name": "NODEMANAGER"
-                },
-                {
-                    "name": "YARN_CLIENT"
-                },
-                {
-                    "name": "MAPREDUCE2_CLIENT"
-                },
-                {
-                    "name": "HIVE_CLIENT"
-                },
-                {
-                    "name": "TEZ_CLIENT"
-                },
-                {
-                    "name": "ZOOKEEPER_CLIENT"
-                }
-            ],
-            "cardinality": "2"
-        }
-    ],
-    "Blueprints": {
-        "blueprint_name": "multi-node-hdfs-yarn",
-        "stack_name": "HDP",
-        "stack_version": "2.2"
+  "configurations": [
+    {
+      "core-site": {
+        "fs.gs.impl": "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem",
+        "fs.AbstractFileSystem.gs.impl": "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS",
+        "fs.gs.project.id": "get this from your google dashboard",
+        "google.cloud.auth.service.account.enable": true,
+        "google.cloud.auth.service.account.email": "yourdetails from google dashboard"
+      }
+    },
+    {
+      "hive-site": {
+        "javax.jdo.option.ConnectionUserName": "hive",
+        "javax.jdo.option.ConnectionPassword": "hive"
+      }
+    },
+    {
+      "hdfs-site": {
+        "dfs.datanode.data.dir": "/hadoop/data1/"
+      }
     }
+  ],
+  "host_groups": [
+    {
+      "name": "master",
+      "components": [
+        {
+          "name": "NAMENODE"
+        },
+        {
+          "name": "SECONDARY_NAMENODE"
+        },
+        {
+          "name": "HCAT"
+        },
+        {
+          "name": "HIVE_SERVER"
+        },
+        {
+          "name": "HIVE_METASTORE"
+        },
+        {
+          "name": "HIVE_CLIENT"
+        },
+        {
+          "name": "WEBHCAT_SERVER"
+        },
+        {
+          "name": "RESOURCEMANAGER"
+        },
+        {
+          "name": "APP_TIMELINE_SERVER"
+        },
+        {
+          "name": "HISTORYSERVER"
+        },
+        {
+          "name": "ZOOKEEPER_SERVER"
+        }
+      ],
+      "cardinality": "1"
+    },
+    {
+      "name": "slave_1",
+      "components": [
+        {
+          "name": "DATANODE"
+        },
+        {
+          "name": "HDFS_CLIENT"
+        },
+        {
+          "name": "NODEMANAGER"
+        },
+        {
+          "name": "YARN_CLIENT"
+        },
+        {
+          "name": "MAPREDUCE2_CLIENT"
+        },
+        {
+          "name": "HIVE_CLIENT"
+        },
+        {
+          "name": "ZOOKEEPER_CLIENT"
+        }
+      ],
+      "cardinality": "2"
+    }
+  ],
+  "Blueprints": {
+    "blueprint_name": "multi-node-hdfs-yarn",
+    "stack_name": "HDP",
+    "stack_version": "2.2"
+  }
 }
