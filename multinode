@@ -6,7 +6,7 @@
         "fs.AbstractFileSystem.gs.impl": "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS",
         "fs.gs.project.id": "hadoop-install",
         "google.cloud.auth.service.account.enable": true,
-        "google.cloud.auth.service.account.email": "262136906998-pbc7rofkk3dm487p4442emf1kbbk1uuu@developer.gserviceaccount.com"
+        "google.cloud.auth.service.account.email": "get this value from your google account"
       }
     },
     {
