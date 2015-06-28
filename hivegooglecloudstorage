@@ -6,13 +6,19 @@
         "fs.AbstractFileSystem.gs.impl": "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS",
         "fs.gs.project.id": "get this from your google dashboard",
         "google.cloud.auth.service.account.enable": true,
-        "google.cloud.auth.service.account.email": "yourdetails from google dashboard"
+        "google.cloud.auth.service.account.email": "yourdetails from google dashboard",
+        "google.cloud.auth.service.account.keyfile": "/keys/hadoop.p12" 
       }
     },
     {
       "hive-site": {
         "javax.jdo.option.ConnectionUserName": "hive",
         "javax.jdo.option.ConnectionPassword": "hive"
+      }
+    },
+    {
+      "tez-site": {
+        "tez.aux.uris" : "/apps/tez/aux-jars/"
       }
     },
     {
