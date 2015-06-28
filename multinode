@@ -4,7 +4,7 @@
       "core-site": {
         "fs.gs.impl": "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem",
         "fs.AbstractFileSystem.gs.impl": "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS",
-        "fs.gs.project.id": "hadoop-install",
+        "fs.gs.project.id": "get this value from your google account",
         "google.cloud.auth.service.account.enable": true,
         "google.cloud.auth.service.account.email": "get this value from your google account"
       }
