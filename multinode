@@ -1,85 +1,30 @@
 {
   "configurations": [
     {
-      "hive-site": {
-        "javax.jdo.option.ConnectionUserName": "hive",
-        "javax.jdo.option.ConnectionPassword": "hive"
+      "core-site": {
+        "fs.gs.impl": "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem",
+        "fs.AbstractFileSystem.gs.impl": "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS",
+        "fs.gs.project.id": "hadoop-install",
+        "google.cloud.auth.service.account.enable": true,
+        "google.cloud.auth.service.account.email": "262136906998-pbc7rofkk3dm487p4442emf1kbbk1uuu@developer.gserviceaccount.com"
+      }
+    },
+    {
+      "hdfs-site": {
+        "dfs.datanode.data.dir": "/hadoop"
       }
     }
   ],
   "host_groups": [
     {
-      "name": "master_1",
+      "name": "master",
       "components": [
         {
           "name": "NAMENODE"
         },
         {
-          "name": "ZOOKEEPER_SERVER"
-        },
-        {
-          "name": "HBASE_MASTER"
-        },
-        {
-          "name": "HDFS_CLIENT"
-        },
-        {
-          "name": "YARN_CLIENT"
-        },
-        {
-          "name": "HCAT"
-        },
-        {
-          "name": "FALCON_SERVER"
-        },
-        {
-          "name": "FLUME_HANDLER"
-        },
-        {
-          "name": "KAFKA_BROKER"
-        }
-      ],
-      "cardinality": "1"
-    },
-    {
-      "name": "master_2",
-      "components": [
-        {
-          "name": "ZOOKEEPER_CLIENT"
-        },
-        {
-          "name": "HISTORYSERVER"
-        },
-        {
-          "name": "HIVE_SERVER"
-        },
-        {
           "name": "SECONDARY_NAMENODE"
         },
-        {
-          "name": "HIVE_METASTORE"
-        },
-        {
-          "name": "HDFS_CLIENT"
-        },
-        {
-          "name": "HIVE_CLIENT"
-        },
-        {
-          "name": "YARN_CLIENT"
-        },
-        {
-          "name": "MYSQL_SERVER"
-        },
-        {
-          "name": "WEBHCAT_SERVER"
-        }
-      ],
-      "cardinality": "1"
-    },
-    {
-      "name": "master_3",
-      "components": [
         {
           "name": "RESOURCEMANAGER"
         },
@@ -87,76 +32,25 @@
           "name": "APP_TIMELINE_SERVER"
         },
         {
-          "name": "SLIDER"
+          "name": "HISTORYSERVER"
         },
         {
           "name": "ZOOKEEPER_SERVER"
         }
       ],
-      "cardinality": "1"
-    },
-    {
-      "name": "master_4",
-      "components": [
-        {
-          "name": "OOZIE_SERVER"
-        },
-        {
-          "name": "ZOOKEEPER_SERVER"
-        },
-      ]
       "cardinality": "1"
     },
     {
       "name": "slave_1",
       "components": [
         {
-          "name": "HBASE_REGIONSERVER"
-        },
-        {
-          "name": "NODEMANAGER"
-        },
-        {
           "name": "DATANODE"
-        },
-        {
-          "name": "FALCON_CLIENT"
-        },
-        {
-          "name": "OOZIE_CLIENT"
-        }
-      ],
-      "cardinality": "${slavesCount}"
-    },
-    {
-      "name": "gateway",
-      "components": [
-        {
-          "name": "AMBARI_SERVER"
-        },
-        {
-          "name": "ZOOKEEPER_CLIENT"
-        },
-        {
-          "name": "PIG"
-        },
-        {
-          "name": "OOZIE_CLIENT"
-        },
-        {
-          "name": "HBASE_CLIENT"
-        },
-        {
-          "name": "HCAT"
-        },
-        {
-          "name": "SQOOP"
         },
         {
           "name": "HDFS_CLIENT"
         },
         {
-          "name": "HIVE_CLIENT"
+          "name": "NODEMANAGER"
         },
         {
           "name": "YARN_CLIENT"
@@ -165,14 +59,14 @@
           "name": "MAPREDUCE2_CLIENT"
         },
         {
-          "name": "KNOX_GATEWAY"
+          "name": "ZOOKEEPER_CLIENT"
         }
       ],
-      "cardinality": "1"
+      "cardinality": "2"
     }
   ],
   "Blueprints": {
-    "blueprint_name": "hdp-multinode-sequenceiq",
+    "blueprint_name": "multi-node-hdfs-yarn",
     "stack_name": "HDP",
     "stack_version": "2.2"
   }
