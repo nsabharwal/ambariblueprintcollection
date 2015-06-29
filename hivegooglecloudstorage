@@ -47,6 +47,9 @@
           "name": "HIVE_METASTORE"
         },
         {
+          "name": "MYSQL_SERVER"
+        },
+        {
           "name": "HIVE_CLIENT"
         },
         {
